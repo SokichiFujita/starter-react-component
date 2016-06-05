@@ -1,0 +1,60 @@
+{
+  "name": "starter-react-component",
+  "version": "0.0.1",
+  "private": false,
+  "preferGlobal": true,
+  "bin": {
+    "starter-react-component": "bin/index.js"
+  },
+  "scripts": {
+    "test": "npm link && mkdir __test && cd __test && starter-react-component init MyComponent && npm test && npm build && cd ../ && rm --rf __test && npm unlink && echo Completed!"
+  },
+  "description": "A generator for React library.",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SokichiFujita/starter-react-component"
+  },
+  "keywords": [
+    "react", 
+    "react.js", 
+    "reactjs", 
+    "flux", 
+    "flux-utils", 
+    "react-component", 
+    "jest", 
+    "immutable.js", 
+    "immutable", 
+    "material-ui", 
+    "react-router", 
+    "react-addons", 
+    "facebook", 
+    "starter", 
+    "starter-kit", 
+    "boilerplate", 
+    "generator", 
+    "webpack", 
+    "babel", 
+    "eslint", 
+    "es2015", 
+    "es2016", 
+    "es6", 
+    "es7", 
+    "stage-0", 
+    "webpack-dev-server", 
+    "axios", 
+    "store,",
+    "reducestore,",
+    "action",
+    "actioncreators",
+    "dispatcher"
+  ],
+  "author": "SokichiFujita",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SokichiFujita/starter-react-component/issues"
+  },
+  "homepage": "https://github.com/SokichiFujita/starter-react-component"
+}
