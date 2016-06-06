@@ -14,7 +14,7 @@ A React component generator to publish to npm.
 ## Installation
 
 ```
-npm install -g starter-react-component
+npm install -g starter-react-component [Component Name]
 ```
 
 ## Usage
