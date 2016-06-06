@@ -62,6 +62,7 @@ const scripts = {
   "build-demo": "NODE_ENV=production node_modules/.bin/webpack -p --config webpack.demo.config.js --progress --colors --display-error-details",
   "build-component": "NODE_ENV=production node_modules/.bin/webpack -p --progress --colors --display-error-details",
   "build": "npm run build-demo && npm run build-component",
+  "prepublish": "npm run build",
   "test": "BABEL_JEST_STAGE=0 jest",
   "lint": "eslint src/**"
 };
@@ -118,16 +119,33 @@ function setupReact(arg) {
   fixJSON('package.json', 'scripts', scripts); 
   fixJSON('package.json', 'keywords', keywords); 
   fixJSON('package.json', 'license', 'MIT'); 
+  fixJSON('package.json', 'main', `./lib/${arg}.js`); 
   createJSON('.eslintrc', eslint);
   createJSON('.babelrc', {"presets":["react", "es2015", "stage-0"]});
+  generateNpmignore();
   generateWebpackConfig(arg);
   generateWebpackDemoConfig(arg);
   generateComponentFile(arg);
+  generateIndexJS(arg);
   generateDemoHtml(arg);
   generateDemoJS(arg);
   generateComponentTestFiles();
   npmInstall(npms);
 }
+
+function generateNpmignore() {
+  const code=
+`
+src/
+__tests__/
+.eslintrc
+.babelrc
+webpack.config.js
+webpack.demo.config.js
+`;
+  createFile('.npmignore', code);
+}
+
 
 function generateWebpackConfig(name) { 
 const code =
@@ -135,7 +153,7 @@ const code =
 
 const config = {
   entry: {
-    ${name}: ["./src/${name}.js"]
+    ${name}: ["./src/index.js"]
   },
   output: {
     path: __dirname + '/lib',
@@ -229,6 +247,16 @@ module.exports = config;
   createFile(`webpack.demo.config.js`, code);
 }
 
+function generateIndexJS(name) {
+  const code =
+`
+export default from './${name}';
+`;
+  createFile(`./src/index.js`, code);
+}
+
+
+
 function generateDemoHtml(name) {
   const code =
 
@@ -244,7 +272,6 @@ function generateDemoHtml(name) {
   </body>
 </html>
 `;
-
   createFile(`./demo/index.html`, code);
 }
 
@@ -270,7 +297,6 @@ class ${name}Demo extends Component {
 
 render(<${name}Demo />, document.getElementById('root'));
 `;
-
   createFile(`./src/${name}Demo.js`, code);
 }
 
@@ -304,7 +330,6 @@ class ${name} extends Component {
 
 export default ${name};
 `;
-  
   createFile(`./src/${name}.js`, code);
 }
 
