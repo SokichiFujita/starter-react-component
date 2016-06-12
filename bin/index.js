@@ -46,7 +46,7 @@ const npms = [
 
 const repository = {
   "type":"git", 
-  "url":"https://example.com"
+  "url":"https://github.com"
 };
 
 const jest = {
@@ -61,7 +61,7 @@ const scripts = {
   "start": "webpack-dev-server -d --config webpack.demo.config.js --progress --colors --display-error-details",
   "build-demo": "NODE_ENV=production node_modules/.bin/webpack -p --config webpack.demo.config.js --progress --colors --display-error-details",
   "build-component": "NODE_ENV=production node_modules/.bin/webpack -p --progress --colors --display-error-details",
-  "build": "npm run build-demo && npm run build-component",
+  "build": "npm run build-component && npm run build-demo",
   "prepublish": "npm run build",
   "test": "BABEL_JEST_STAGE=0 jest",
   "lint": "eslint src/**"
@@ -102,7 +102,7 @@ function main() {
 
 function showUsage() {
   console.log('Usage:');
-  console.log('starter-react-component init : Setup a React component');
+  console.log('starter-react-component init [component-name]: Generate a React component to publish to npm');
   process.exit(-1);
 }
 
