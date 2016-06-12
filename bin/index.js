@@ -119,7 +119,7 @@ function setupReact(arg) {
   fixJSON('package.json', 'scripts', scripts); 
   fixJSON('package.json', 'keywords', keywords); 
   fixJSON('package.json', 'license', 'MIT'); 
-  fixJSON('package.json', 'main', `./lib/${arg}.js`); 
+  fixJSON('package.json', 'main', `./lib/index.js`); 
   createJSON('.eslintrc', eslint);
   createJSON('.babelrc', {"presets":["react", "es2015", "stage-0"]});
   generateNpmignore();
@@ -153,7 +153,7 @@ const code =
 
 const config = {
   entry: {
-    ${name}: ["./src/index.js"]
+    index: ["./src/index.js"]
   },
   output: {
     path: __dirname + '/lib',
