@@ -4,25 +4,28 @@ Publishing React Component is not so easy task as just writing a React Component
 
 ## Usage
 
-Following command will create a React project for publishing npm.
+1. Create directory for new component
 
 ```
 mkdir [YourNewReactComponent] && cd [YourNewReactComponent] 
+```
+
+2. Generate new project
+
+```
 npx starter-react-component init [YourNewReactComponent]
 ```
 
 ## How to publish my React Component to npm
 
-1. Configure the generated `package.json`.
+1. Configure the generated `package.json`. (e.g. Add your name to the `auther`)
 
-  e.g. Add your name to the `auther`
+2. Just publish it.
 
-2. Just publish it!
-
-  ```
-  npm login
-  npm publish
-  ```
+```
+npm login
+npm publish
+```
 
 ## Other commands
 
