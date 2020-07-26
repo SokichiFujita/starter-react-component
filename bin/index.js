@@ -213,6 +213,7 @@ function setupReact(arg) {
       "@babel/preset-typescript",
     ],
   });
+  generateReadme(arg);
   generateNpmignore();
   generateWebpackConfig(arg);
   generateWebpackDemoConfig(arg);
@@ -222,6 +223,28 @@ function setupReact(arg) {
   generateDemoJS(arg);
   generateComponentTestFiles();
   npmInstall(npms);
+}
+
+function generateReadme(componentName) {
+  const moduleName = getJSONValueByKey("package.json", "name");
+  const content = `# ${componentName}
+
+## Install
+
+    npm install ${moduleName}
+
+## Usage
+
+    import { ${componentName} } from '${componentName}';
+
+    const ParentComponent = () => (
+      <div>
+        <${componentName} />
+      </div>
+    );    
+`;
+
+  createFile("README.md", content);
 }
 
 function generateNpmignore() {
@@ -465,4 +488,9 @@ function fixJSON(file, key, value) {
   json[key] = value;
   fs.writeFileSync(file, JSON.stringify(json, null, "  "));
   console.log("Fix:", file, "Key:", key);
+}
+
+function getJSONValueByKey(file, key) {
+  var json = JSON.parse(fs.readFileSync(file));
+  return json[key];
 }
