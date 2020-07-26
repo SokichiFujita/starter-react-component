@@ -45,7 +45,7 @@ npm publish
 ## How to use the published React Component
 
 ```jsx
-import { MyNewReactComponent } from "MyNewReactComponent";
+import { MyNewReactComponent } from "[my-new-npm-module]";
 
 const MyApp = () => (
   <div>
