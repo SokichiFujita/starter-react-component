@@ -1,38 +1,30 @@
-# starter-react-component
+# Starter-React-Component
 
-A React component generator to publish to npm.
-
-- Generate a React component project which includes the following configuration.
-  - webpack for the React component component and its demo.
-  - `.npmignore` to publish the component to npm
-  - `.babelrc` for ES6(ES2015), ES7
-  - `.eslintrc` with Airbnb-style-guide
-- Build the React component.
-- Build a demo for the React component.
-- Publish it to NPM.
-
-## Installation
-
-```
-npm install -g starter-react-component [Component Name]
-```
+Publishing React Component is not so easy task as just writing a React Component. This tool will help you to create a React component which has the npm publishing feature.
 
 ## Usage
 
-```
-starter-react-component init
-```
-
-## NPM commands for a generated React component
+Following command will create a React project for publishing npm.
 
 ```
-npm start       // Display React component's demo
-npm publish     // Build React component and publish to npm
-npm test        // Run test by Jest
-npm run lint    // Run ESLint with Airbnb-Style-Guide
+npx starter-react-component init [Component Name]
+```
+
+## How to publish my React Component to npm
+
+```
+npm login
+npm publish
+```
+
+## Other commands
+
+```
+npm start       // Display your React Component in a demo page
+npm test        // Run test
+npm run lint    // Run ESLint
 ```
 
 ## License
 
 - MIT
-

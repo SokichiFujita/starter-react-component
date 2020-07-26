@@ -1,57 +1,39 @@
 {
   "name": "starter-react-component",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "private": false,
   "preferGlobal": true,
   "bin": {
     "starter-react-component": "bin/index.js"
   },
   "scripts": {
-    "test": "npm link && mkdir __test && cd __test && starter-react-component init MyComponent && npm test && npm build && cd ../ && rm --rf __test && npm unlink && echo Completed!"
+    "pretest": "npm run cleanup && npm link",
+    "test": "mkdir __test && cd __test && starter-react-component init MyComponent && npm test && npm run build",
+    "posttest": "npm unlink",
+    "cleanup": "rm -rf __test && rm -rf node_modules"
   },
-  "description": "A generator for React library.",
+  "description": "Create a React Component to publish as a npm module",
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=10.0.0"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/SokichiFujita/starter-react-component"
   },
   "keywords": [
-    "react", 
-    "react.js", 
-    "reactjs", 
-    "flux", 
-    "flux-utils", 
-    "react-component", 
-    "jest", 
-    "immutable.js", 
-    "immutable", 
-    "material-ui", 
-    "react-router", 
-    "react-addons", 
-    "facebook", 
-    "starter", 
-    "starter-kit", 
-    "boilerplate", 
-    "generator", 
-    "webpack", 
-    "babel", 
-    "eslint", 
-    "es2015", 
-    "es2016", 
-    "es6", 
-    "es7", 
-    "stage-0", 
-    "webpack-dev-server", 
-    "axios", 
-    "store,",
-    "reducestore,",
-    "action",
-    "actioncreators",
-    "dispatcher"
+    "react",
+    "react.js",
+    "reactjs",
+    "npm",
+    "npm publish",
+    "jest",
+    "starter",
+    "starter kit",
+    "webpack",
+    "babel",
+    "eslint"
   ],
-  "author": "SokichiFujita",
+  "author": "Sokichi Fujita",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/SokichiFujita/starter-react-component/issues"
