@@ -16,6 +16,15 @@ mkdir [YourNewReactComponent] && cd [YourNewReactComponent]
 npx starter-react-component init [YourNewReactComponent]
 ```
 
+Notice: Following tools are used in new project 
+
+  - TypeScript
+  - Webpack & Webpack dev server
+  - Babel
+  - ESLint
+  - Jest
+  - etc.
+
 ## How to publish my React Component to npm
 
 1. Configure the generated `package.json`. (e.g. Add your name to the `auther`)
