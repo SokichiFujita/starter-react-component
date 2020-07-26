@@ -19,7 +19,7 @@ npx starter-react-component init [YourNewReactComponent]
 Notice: Following libraries are used in new project.
 
   - TypeScript
-  - Webpack & Webpack dev server
+  - Webpack
   - Babel
   - ESLint
   - Jest
