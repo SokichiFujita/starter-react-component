@@ -6,7 +6,7 @@ Publishing React Component is not so easy task as just writing a React Component
 
 1. Create directory for new npm module
 
-```
+```sh
 mkdir [my-new-npm-module] && cd [my-new-npm-module] 
 ```
 
@@ -14,7 +14,7 @@ Notice: This name is used for your module name on npm. Your module will be insta
 
 2. Generate new project
 
-```
+```sh
 npx starter-react-component init [MyNewReactComponent]
 ```
 
@@ -35,7 +35,7 @@ Notice: Following libraries are used in new project.
 
 3. Publish it.
 
-```
+```sh
 npm login
 npm publish
 ```
@@ -44,7 +44,7 @@ npm publish
 
 ## How to use the published React Component
 
-```
+```jsx
 import { MyNewReactComponent } from "MyNewReactComponent";
 
 const App = () => (
@@ -56,7 +56,7 @@ const App = () => (
 
 ## Other commands
 
-```
+```sh
 npm start       // Display your React Component in a demo page
 npm test        // Run test
 npm run lint    // Run ESLint
