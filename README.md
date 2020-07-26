@@ -47,7 +47,7 @@ npm publish
 ```jsx
 import { MyNewReactComponent } from "MyNewReactComponent";
 
-const App = () => (
+const MyApp = () => (
   <div>
     <MyNewReactComponent />
   </div>
