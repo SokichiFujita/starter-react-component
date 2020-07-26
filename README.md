@@ -31,7 +31,9 @@ Notice: Following libraries are used in new project.
 
 1. Add your name to the `auther` key of the generated `package.json`.
 
-2. Just publish it.
+2. Develop your component under the `./src`
+
+3. Publish it.
 
 ```
 npm login
@@ -39,6 +41,18 @@ npm publish
 ```
 
 `my-new-npm-module` will be published on npm.
+
+## How to use the published React Component
+
+```
+import { MyNewReactComponent } from "MyNewReactComponent";
+
+const App = () => (
+  <div>
+    <MyNewReactComponent />
+  </div>
+)
+```
 
 ## Other commands
 
