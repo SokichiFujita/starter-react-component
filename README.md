@@ -31,9 +31,9 @@ Notice: Following libraries are used in new project.
 
 1. Add your name to the `auther` key of the generated `package.json`.
 
-2. Develop the [MyNewReactComponent] under the `./src`
+2. Develop the `./src/[MyNewReactComponent].tsx`
 
-3. Publish it.
+3. Publish it to npm.
 
 ```sh
 npm login
