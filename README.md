@@ -16,7 +16,7 @@ mkdir [YourNewReactComponent] && cd [YourNewReactComponent]
 npx starter-react-component init [YourNewReactComponent]
 ```
 
-Notice: Following tools are used in new project 
+Notice: Following libraries are used in new project.
 
   - TypeScript
   - Webpack & Webpack dev server
